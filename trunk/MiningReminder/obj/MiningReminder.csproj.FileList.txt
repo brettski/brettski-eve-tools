@@ -1,0 +1,9 @@
+obj\Debug\ResolveAssemblyReference.cache
+obj\Debug\MiningReminder.minerMain.resources
+obj\Debug\MiningReminder.Properties.Resources.resources
+obj\Debug\MiningReminder.csproj.GenerateResource.Cache
+bin\Debug\MiningReminder.exe
+bin\Debug\MiningReminder.pdb
+obj\Debug\MiningReminder.exe
+obj\Debug\MiningReminder.pdb
+bin\Debug\MiningReminder.exe.config
