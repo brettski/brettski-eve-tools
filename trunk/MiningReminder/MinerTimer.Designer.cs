@@ -45,7 +45,13 @@ namespace MiningReminder
             this.lblCountDown = new System.Windows.Forms.Label();
             this.lblRunState = new System.Windows.Forms.Label();
             this.notifyIcon1 = new System.Windows.Forms.NotifyIcon(this.components);
+            this.cmsForNotify = new System.Windows.Forms.ContextMenuStrip(this.components);
+            this.tsmStopTimer = new System.Windows.Forms.ToolStripMenuItem();
+            this.tsmStartTimer = new System.Windows.Forms.ToolStripMenuItem();
+            this.tsmHide = new System.Windows.Forms.ToolStripMenuItem();
+            this.tsmClose = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
+            this.cmsForNotify.SuspendLayout();
             this.SuspendLayout();
             // 
             // label1
@@ -176,12 +182,52 @@ namespace MiningReminder
             // 
             this.notifyIcon1.BalloonTipIcon = System.Windows.Forms.ToolTipIcon.Info;
             this.notifyIcon1.BalloonTipTitle = "Miner Reminder";
+            this.notifyIcon1.ContextMenuStrip = this.cmsForNotify;
             this.notifyIcon1.Icon = ((System.Drawing.Icon)(resources.GetObject("notifyIcon1.Icon")));
+            // 
+            // cmsForNotify
+            // 
+            this.cmsForNotify.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.tsmStopTimer,
+            this.tsmStartTimer,
+            this.tsmHide,
+            this.tsmClose});
+            this.cmsForNotify.Name = "cmsForNotify";
+            this.cmsForNotify.Size = new System.Drawing.Size(139, 92);
+            // 
+            // tsmStopTimer
+            // 
+            this.tsmStopTimer.Name = "tsmStopTimer";
+            this.tsmStopTimer.Size = new System.Drawing.Size(152, 22);
+            this.tsmStopTimer.Text = "Stop Timer";
+            this.tsmStopTimer.Click += new System.EventHandler(this.tsmStopTimer_Click);
+            // 
+            // tsmStartTimer
+            // 
+            this.tsmStartTimer.Name = "tsmStartTimer";
+            this.tsmStartTimer.Size = new System.Drawing.Size(152, 22);
+            this.tsmStartTimer.Text = "Start Timer";
+            this.tsmStartTimer.Click += new System.EventHandler(this.tsmStartTimer_Click);
+            // 
+            // tsmHide
+            // 
+            this.tsmHide.Name = "tsmHide";
+            this.tsmHide.Size = new System.Drawing.Size(152, 22);
+            this.tsmHide.Text = "Hide";
+            this.tsmHide.Click += new System.EventHandler(this.tsmHide_Click);
+            // 
+            // tsmClose
+            // 
+            this.tsmClose.Name = "tsmClose";
+            this.tsmClose.Size = new System.Drawing.Size(152, 22);
+            this.tsmClose.Text = "Quit";
+            this.tsmClose.Click += new System.EventHandler(this.tsmClose_Click);
             // 
             // minerMain
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.SystemColors.Control;
             this.ClientSize = new System.Drawing.Size(226, 236);
             this.Controls.Add(this.lblRunState);
             this.Controls.Add(this.lblCountDown);
@@ -197,6 +243,7 @@ namespace MiningReminder
             this.Load += new System.EventHandler(this.minerMain_Load);
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();
+            this.cmsForNotify.ResumeLayout(false);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -219,6 +266,11 @@ namespace MiningReminder
         private System.Windows.Forms.ToolStripMenuItem helpToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem aboutToolStripMenuItem;
         private System.Windows.Forms.NotifyIcon notifyIcon1;
+        private System.Windows.Forms.ContextMenuStrip cmsForNotify;
+        private System.Windows.Forms.ToolStripMenuItem tsmStopTimer;
+        private System.Windows.Forms.ToolStripMenuItem tsmStartTimer;
+        private System.Windows.Forms.ToolStripMenuItem tsmHide;
+        private System.Windows.Forms.ToolStripMenuItem tsmClose;
     }
 }
 

@@ -129,7 +129,32 @@ namespace MiningReminder
 
         private void notifyIconToolStripMenuItem_CheckedChanged(object sender, EventArgs e)
         {
+            if (notifyIconToolStripMenuItem.Checked)
+                notifyIcon1.Visible = true;
+            else
+                notifyIcon1.Visible = false;
 
+        }
+
+        private void tsmStopTimer_Click(object sender, EventArgs e)
+        {
+            this.stopTimer();
+        }
+
+        private void tsmStartTimer_Click(object sender, EventArgs e)
+        {
+            this.startTimer();
+        }
+
+        private void tsmHide_Click(object sender, EventArgs e)
+        {
+            notifyIcon1.Visible = false;
+            notifyIconToolStripMenuItem.Checked = false;
+        }
+
+        private void tsmClose_Click(object sender, EventArgs e)
+        {
+            this.Close();
         }
     }
 }
