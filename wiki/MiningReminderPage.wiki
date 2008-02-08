@@ -1,0 +1,9 @@
+#summary Mining Reminder Home
+
+= Introduction =
+
+A small .NET 2 WinForm application which alerts you at a set time.  Since I like to read and program while doing the really boring-ass mining, I needed something to prompt me to dump my cargo before the lasers stopped.
+
+= Details =
+
+Ah, I'll fill these in later.  I would like to get a picture here at least.  
