@@ -18,13 +18,16 @@ namespace MiningReminder
         public minerMain()
         {
             InitializeComponent();
+            splayer.SoundLocation = @"C:\windows\media\ringin.wav";
         }
 
         private void minerMain_Load(object sender, EventArgs e)
         {
-            splayer.SoundLocation = @"C:\windows\media\ringin.wav";
-        }
 
+        }
+        /// <summary>
+        /// This is the main on/off button (check box actually)
+        /// </summary>
         private void ChkTimerCtrl_CheckedChanged(object sender, EventArgs e)
         {
             if (ChkTimerCtrl.Checked)   // if checked timer is on
@@ -121,6 +124,11 @@ namespace MiningReminder
                 notifyIcon1.BalloonTipText = "Alerts in main window.";
                 notifyIcon1.ShowBalloonTip(1);
             }
+
+        }
+
+        private void notifyIconToolStripMenuItem_CheckedChanged(object sender, EventArgs e)
+        {
 
         }
     }
