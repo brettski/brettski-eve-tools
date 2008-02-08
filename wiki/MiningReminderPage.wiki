@@ -1,5 +1,4 @@
 #summary Mining Reminder Home
-#labels Phase-Requirements
 
 = Introduction =
 
