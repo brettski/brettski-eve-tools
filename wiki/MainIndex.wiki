@@ -3,7 +3,7 @@
 
 = Introduction =
 
-EVE Tools build by Brettski.  I enjoy playing EVE-Online.com, and programming to me is still a hobby.  I find the depth of EVE requiring many tools to make things easier or more fun in the game.  These are the tools I have built.  There are online IGB (In-Game Browser) compatible tools I have built at http://eve-igbtools.com.
+EVE Tools build by Brettski.  I enjoy playing [https://secure.eve-online.com/ft/?aid=102929 EVE-Online.com], and programming to me is still a hobby.  I find the depth of EVE requiring many tools to make things easier or more fun in the game.  These are the tools I have built.  There are online IGB (In-Game Browser) compatible tools I have built at http://eve-igbtools.com.
 
 = Tools =
 
