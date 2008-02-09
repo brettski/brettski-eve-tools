@@ -184,6 +184,7 @@ namespace MiningReminder
             this.notifyIcon1.BalloonTipTitle = "Miner Reminder";
             this.notifyIcon1.ContextMenuStrip = this.cmsForNotify;
             this.notifyIcon1.Icon = ((System.Drawing.Icon)(resources.GetObject("notifyIcon1.Icon")));
+            this.notifyIcon1.Text = "Miner Reminder";
             // 
             // cmsForNotify
             // 
@@ -198,28 +199,28 @@ namespace MiningReminder
             // tsmStopTimer
             // 
             this.tsmStopTimer.Name = "tsmStopTimer";
-            this.tsmStopTimer.Size = new System.Drawing.Size(152, 22);
+            this.tsmStopTimer.Size = new System.Drawing.Size(138, 22);
             this.tsmStopTimer.Text = "Stop Timer";
             this.tsmStopTimer.Click += new System.EventHandler(this.tsmStopTimer_Click);
             // 
             // tsmStartTimer
             // 
             this.tsmStartTimer.Name = "tsmStartTimer";
-            this.tsmStartTimer.Size = new System.Drawing.Size(152, 22);
+            this.tsmStartTimer.Size = new System.Drawing.Size(138, 22);
             this.tsmStartTimer.Text = "Start Timer";
             this.tsmStartTimer.Click += new System.EventHandler(this.tsmStartTimer_Click);
             // 
             // tsmHide
             // 
             this.tsmHide.Name = "tsmHide";
-            this.tsmHide.Size = new System.Drawing.Size(152, 22);
+            this.tsmHide.Size = new System.Drawing.Size(138, 22);
             this.tsmHide.Text = "Hide";
             this.tsmHide.Click += new System.EventHandler(this.tsmHide_Click);
             // 
             // tsmClose
             // 
             this.tsmClose.Name = "tsmClose";
-            this.tsmClose.Size = new System.Drawing.Size(152, 22);
+            this.tsmClose.Size = new System.Drawing.Size(138, 22);
             this.tsmClose.Text = "Quit";
             this.tsmClose.Click += new System.EventHandler(this.tsmClose_Click);
             // 
