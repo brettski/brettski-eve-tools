@@ -53,7 +53,7 @@ namespace MiningReminder
             }
             timerLength = Convert.ToInt32(tbxInterval.Text);
             timerCounter = timerLength;
-            timer1.Interval = 1000; // Every second raise event
+            timer1.Interval = 1000; // Every second raise event +-55ms
             this.ChkTimerCtrl.Text = "Push to Stop";
             this.lblRunState.Text = "Running...";
             lblCountDown.Text = timerLength.ToString();
@@ -101,15 +101,15 @@ namespace MiningReminder
 
         private void doAlarm()
         {
-            //if(this.menuStrip1. 
-            
             splayer.Play();
             this.Activate();
+            notifyIcon1.BalloonTipText = "Dump your Cargo";
+            notifyIcon1.ShowBalloonTip(1);
             restartTimer();
             return;
         }
 
-        private void testing(int i)
+        private void testing()
         {
 
             if (notifyIconToolStripMenuItem.Checked)
@@ -126,14 +126,20 @@ namespace MiningReminder
             }
 
         }
-
-        private void notifyIconToolStripMenuItem_CheckedChanged(object sender, EventArgs e)
+        /// <summary>
+        /// For any item changed in the settings tool strip item, this will fire, so all 
+        /// checks can be done here in this event.
+        /// </summary>
+        private void settingsToolStripMenuItem_DropDownItemClicked(object sender, ToolStripItemClickedEventArgs e)
         {
+            // Stupid Auto-naming.  Use Notify Icon from Settings menu item
             if (notifyIconToolStripMenuItem.Checked)
                 notifyIcon1.Visible = true;
             else
                 notifyIcon1.Visible = false;
 
+            //hideOnTaskbarToolStripMenuItem;
+            //baloonAlertToolStripMenuItem;
         }
 
         private void tsmStopTimer_Click(object sender, EventArgs e)
@@ -155,6 +161,17 @@ namespace MiningReminder
         private void tsmClose_Click(object sender, EventArgs e)
         {
             this.Close();
+        }
+
+        private void toolStripComboBox1_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            this.tbxInterval.Text = toolStripComboBox1.SelectedItem.ToString();
+            cmsTimeList.Close();    // Close the list after writing value
+        }
+
+        private void cmsTimeList_Opening(object sender, CancelEventArgs e)
+        {
+            toolStripComboBox1.SelectedIndex = 0;   // Set Combo to first value while cms opens
         }
     }
 }
