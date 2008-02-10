@@ -66,7 +66,8 @@ namespace MiningReminder
             this.lblTitle.ForeColor = System.Drawing.Color.WhiteSmoke;
             this.lblTitle.Location = new System.Drawing.Point(-5, 24);
             this.lblTitle.Name = "lblTitle";
-            this.lblTitle.Size = new System.Drawing.Size(162, 23);
+            this.lblTitle.Padding = new System.Windows.Forms.Padding(2, 0, 0, 0);
+            this.lblTitle.Size = new System.Drawing.Size(164, 23);
             this.lblTitle.TabIndex = 0;
             this.lblTitle.Text = "Miner Reminder";
             // 
@@ -116,7 +117,6 @@ namespace MiningReminder
             this.notifyIconToolStripMenuItem.Name = "notifyIconToolStripMenuItem";
             this.notifyIconToolStripMenuItem.Size = new System.Drawing.Size(176, 22);
             this.notifyIconToolStripMenuItem.Text = "Use Notify Icon";
-            this.notifyIconToolStripMenuItem.CheckedChanged += new System.EventHandler(this.notifyIconToolStripMenuItem_CheckedChanged);
             // 
             // hideOnTaskbarToolStripMenuItem
             // 
@@ -124,6 +124,7 @@ namespace MiningReminder
             this.hideOnTaskbarToolStripMenuItem.Name = "hideOnTaskbarToolStripMenuItem";
             this.hideOnTaskbarToolStripMenuItem.Size = new System.Drawing.Size(176, 22);
             this.hideOnTaskbarToolStripMenuItem.Text = "Hide On Taskbar";
+            this.hideOnTaskbarToolStripMenuItem.ToolTipText = "Don\'t show on taskbar";
             // 
             // baloonAlertToolStripMenuItem
             // 
@@ -171,6 +172,7 @@ namespace MiningReminder
             this.tbxInterval.Size = new System.Drawing.Size(125, 23);
             this.tbxInterval.TabIndex = 3;
             this.tbxInterval.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
+            this.tbxInterval.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.tbxInterval_KeyPress);
             // 
             // cmsTimeList
             // 
