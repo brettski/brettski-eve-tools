@@ -13,6 +13,7 @@ namespace MiningReminder
     {
         private int timerLength = 0;
         private int timerCounter = 0;
+        private bool useBaloonAlerts = false;
         private System.Media.SoundPlayer splayer = new System.Media.SoundPlayer();
         
         public minerMain()
@@ -23,7 +24,7 @@ namespace MiningReminder
 
         private void minerMain_Load(object sender, EventArgs e)
         {
-
+            SettingsMenuAction();
         }
         /// <summary>
         /// This is the main on/off button (check box actually)
@@ -51,6 +52,8 @@ namespace MiningReminder
                 ChkTimerCtrl.Checked = false;
                 return;
             }
+            ChkTimerCtrl.Checked = true;
+            ChkTimerCtrl.Update();
             timerLength = Convert.ToInt32(tbxInterval.Text);
             timerCounter = timerLength;
             timer1.Interval = 1000; // Every second raise event +-55ms
@@ -103,8 +106,11 @@ namespace MiningReminder
         {
             splayer.Play();
             this.Activate();
-            notifyIcon1.BalloonTipText = "Dump your Cargo";
-            notifyIcon1.ShowBalloonTip(1);
+            if (useBaloonAlerts)
+            {
+                notifyIcon1.BalloonTipText = "Dump your Cargo";
+                notifyIcon1.ShowBalloonTip(1);
+            }
             restartTimer();
             return;
         }
@@ -129,17 +135,91 @@ namespace MiningReminder
         /// <summary>
         /// For any item changed in the settings tool strip item, this will fire, so all 
         /// checks can be done here in this event.
+        /// The bitch of this even is that the item clicked isn't actually updated until after this event
         /// </summary>
         private void settingsToolStripMenuItem_DropDownItemClicked(object sender, ToolStripItemClickedEventArgs e)
         {
-            // Stupid Auto-naming.  Use Notify Icon from Settings menu item
-            if (notifyIconToolStripMenuItem.Checked)
-                notifyIcon1.Visible = true;
-            else
-                notifyIcon1.Visible = false;
+            // Flip the value for the action method, then flip it back before leaving this method.
+            // The clicked item isn't updated until after this event.
+            if ("notifyIconToolStripMenuItem" == e.ClickedItem.Name)
+                notifyIconToolStripMenuItem.Checked = !notifyIconToolStripMenuItem.Checked;
+            if ("hideOnTaskbarToolStripMenuItem" == e.ClickedItem.Name)
+                hideOnTaskbarToolStripMenuItem.Checked = !hideOnTaskbarToolStripMenuItem.Checked;
+            if ("baloonAlertToolStripMenuItem" == e.ClickedItem.Name)
+                baloonAlertToolStripMenuItem.Checked = !baloonAlertToolStripMenuItem.Checked;
+            
+            SettingsMenuAction();
+            
+            if ("notifyIconToolStripMenuItem" == e.ClickedItem.Name)
+                notifyIconToolStripMenuItem.Checked = !notifyIconToolStripMenuItem.Checked;
+            if ("hideOnTaskbarToolStripMenuItem" == e.ClickedItem.Name)
+                hideOnTaskbarToolStripMenuItem.Checked = !hideOnTaskbarToolStripMenuItem.Checked;
+            if ("baloonAlertToolStripMenuItem" == e.ClickedItem.Name)
+                baloonAlertToolStripMenuItem.Checked = !baloonAlertToolStripMenuItem.Checked;
 
-            //hideOnTaskbarToolStripMenuItem;
-            //baloonAlertToolStripMenuItem;
+        }
+        /// <summary>
+        /// Based on current conditions figure out what to do with the whole settings menu tree
+        /// </summary>
+        private void SettingsMenuAction()
+        {
+            // Menu Items:
+            // notifyIconToolStripMenuItem;
+            // hideOnTaskbarToolStripMenuItem;
+            // baloonAlertToolStripMenuItem;
+            // ------------------------------------------------------------
+            // Stupid Auto-naming.  Use Notify Icon from Settings menu item
+            // Setup up proper view after an item is clicked.
+            if (notifyIconToolStripMenuItem.Checked)
+            {
+                notifyIcon1.Visible = true;
+                hideOnTaskbarToolStripMenuItem.Enabled = true;
+                baloonAlertToolStripMenuItem.Enabled  = true;
+            }
+            else
+            {
+                notifyIcon1.Visible = false;
+                hideOnTaskbarToolStripMenuItem.Enabled = false;
+                hideOnTaskbarToolStripMenuItem.Checked = false;
+                baloonAlertToolStripMenuItem.Enabled = false;
+                baloonAlertToolStripMenuItem.Checked = false;
+            }
+
+            // Process needs for Hide on Taskbar
+            HideOnTaskbarAction();
+            BaloonAlertAction();
+            
+
+        }
+        /// <summary>
+        /// Based on current conditions figure out what you need to do to hide the form
+        /// on the task bar
+        /// </summary>
+        private void HideOnTaskbarAction()
+        {
+            if (!notifyIconToolStripMenuItem.Checked)
+            {
+                this.ShowInTaskbar = true;
+            }
+            else if(notifyIconToolStripMenuItem.Checked && hideOnTaskbarToolStripMenuItem.Checked)
+            {
+                this.ShowInTaskbar = false;
+            }
+            
+        }
+        /// <summary>
+        /// Based on current conditions figure out what you need to do for the baloon alerts.
+        /// </summary>
+        private void BaloonAlertAction()
+        {
+            if (!notifyIconToolStripMenuItem.Checked)
+            {
+                useBaloonAlerts = false;
+            }
+            else if (notifyIconToolStripMenuItem.Checked && baloonAlertToolStripMenuItem.Checked)
+            {
+                useBaloonAlerts = true;
+            }
         }
 
         private void tsmStopTimer_Click(object sender, EventArgs e)
@@ -154,8 +234,8 @@ namespace MiningReminder
 
         private void tsmHide_Click(object sender, EventArgs e)
         {
-            notifyIcon1.Visible = false;
             notifyIconToolStripMenuItem.Checked = false;
+            SettingsMenuAction();
         }
 
         private void tsmClose_Click(object sender, EventArgs e)
@@ -172,6 +252,13 @@ namespace MiningReminder
         private void cmsTimeList_Opening(object sender, CancelEventArgs e)
         {
             toolStripComboBox1.SelectedIndex = 0;   // Set Combo to first value while cms opens
+        }
+
+        private void tbxInterval_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            // Check for enter, if occurs, Start timer
+            if (Convert.ToChar(Keys.Enter) == e.KeyChar)
+                startTimer();
         }
     }
 }
