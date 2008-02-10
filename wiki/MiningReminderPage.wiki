@@ -1,9 +1,11 @@
-#summary Mining Reminder Home
+#summary Miner Reminder Home
 #labels Outline
 
 = Introduction =
 
 A small .NET 2 WinForm application which alerts you at a set time.  Since I like to read and program while doing the really boring-ass mining, I needed something to prompt me to dump my cargo before the lasers stopped.
+
+[http://eve-igtools.com/mr/images/MinerReminder.jpg]
 
 = Details =
 
