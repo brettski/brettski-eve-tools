@@ -9,7 +9,7 @@ I am always open to new EVE tools and will explore the development of any idea w
 
 = Tools =
 
-[MinerReminderPage == Miner Reminder ==]
+== Miner Reminder == [MinerReminderPage link]
 
 Currently, in alpha, is Miner Reminder.  A small stupid WinForms app which makes a sound or uses a notify icon to tell you to dump your cargo while mining.  
 Since I spend most of my mining time doing other things, like this application, I built a reminder so I don't forget to empty my cargo and end up stopping my lasers.
