@@ -3,13 +3,13 @@
 
 = Introduction =
 
-EVE Tools build by Brettski.  I enjoy playing [https://secure.eve-online.com/ft/?aid=102929 EVE-Online.com], and programming to me is still a hobby.  I find the depth of EVE requiring many tools to make things easier or more fun in the game.  These are the tools I have built.  There are online IGB (In-Game Browser) compatible tools I have built at http://eve-igbtools.com.
+EVE Tools build by Brettski.  I enjoy playing [https://secure.eve-online.com/ft/?aid=102929 EVE-Online.com], and programming to me is still a hobby.  I find the depth of EVE requiring many tools to make things easier or more fun in the game.  These are the tools I have built.  There are also EVE-Online IGB (In-Game Browser) compatible tools I have built at http://eve-igbtools.com.
 
 = Tools =
 
-[MiningReminderPage == Mining Reminder ==]
+[MinerReminderPage == Miner Reminder ==]
 
-Currently, in alpha, is Mining Reminder.  A small stupid WinForms app which makes a sound or uses a notify icon to tell you to dump your cargo while mining.  
-Since I spend most of my mining time doing other things, like this, I built a reminder so I don't forget and end up stopping my lasers.
+Currently, in alpha, is Miner Reminder.  A small stupid WinForms app which makes a sound or uses a notify icon to tell you to dump your cargo while mining.  
+Since I spend most of my mining time doing other things, like this application, I built a reminder so I don't forget to empty my cargo and end up stopping my lasers.
 
-== P2 ==
+== Project 2 goes here ==
