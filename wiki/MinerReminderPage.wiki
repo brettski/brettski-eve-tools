@@ -9,4 +9,14 @@ A small .NET 2 WinForm application which alerts you at a set time.  Since I like
 
 = Details =
 
-Ah, I'll fill these in later.    
+_a short list_
+
+* For a quick start, type in the seconds of your miner's duration and hit enter.  The timer will start on enter in the Duration text field 
+
+* Right click on the Duration text field for a selectable list of common times.
+
+* Under Settings you have the ability to use a notification icon (system tray icon). Once enabled you can:
+    # Hide the task bar icon for the Miner Reminder
+    # Show Balloon Alert--alerts will popup from your notification area (system tray)
+    # Start and stop the timer from a right-click menu on the notification icon
+    # Other functions from the notification icon menu
