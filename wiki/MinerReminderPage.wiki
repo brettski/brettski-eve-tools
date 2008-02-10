@@ -9,4 +9,4 @@ A small .NET 2 WinForm application which alerts you at a set time.  Since I like
 
 = Details =
 
-Ah, I'll fill these in later.  I would like to get a picture here at least.  
+Ah, I'll fill these in later.    
