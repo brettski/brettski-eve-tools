@@ -3,7 +3,7 @@
 
 = Introduction =
 
-A small .NET 2 WinForm application which alerts you at a set time.  Since I like to read and program while doing the really boring-ass mining, I needed something to prompt me to dump my cargo before the lasers stopped.
+A small .NET 2 WinForm application which alerts you at a set time.  Since I like to read and program while doing the really boring-ass mining, I needed something to prompt me to dump my cargo into a can before the lasers stopped and I waist ore.  This tool does just that.  For any given integer of seconds, which you set to match your cycle time, the timer will count down and play a sound at zero.  
 
 [http://eve-igbtools.com/mr/images/MinerReminder.jpg]
 
@@ -20,3 +20,10 @@ _a short list_
     # Show Balloon Alert--alerts will popup from your notification area (system tray)
     # Start and stop the timer from a right-click menu on the notification icon
     # Other functions from the notification icon menu
+
+
+= Future Features =
+
+* The ability to change the .wav file used.
+* Properly copy/paste the cycle time from the info page of the miner into the seconds text box of the Miner Reminder
+* Leave your Suggestion! (and of course, "delete it from the internet", is a viable option :) I am open.)
