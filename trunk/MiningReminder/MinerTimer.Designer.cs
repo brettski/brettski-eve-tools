@@ -131,7 +131,7 @@ namespace MiningReminder
             this.baloonAlertToolStripMenuItem.CheckOnClick = true;
             this.baloonAlertToolStripMenuItem.Name = "baloonAlertToolStripMenuItem";
             this.baloonAlertToolStripMenuItem.Size = new System.Drawing.Size(176, 22);
-            this.baloonAlertToolStripMenuItem.Text = "Baloon Alerts";
+            this.baloonAlertToolStripMenuItem.Text = "Balloon Alerts";
             this.baloonAlertToolStripMenuItem.ToolTipText = "Enables Alerts to show in notify icon balloon";
             // 
             // helpToolStripMenuItem
