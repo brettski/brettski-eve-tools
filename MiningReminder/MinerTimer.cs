@@ -88,6 +88,7 @@ namespace MiningReminder
             timerCounter--;
             if (timerCounter > 0)
             {
+                // put inactivate if here
                 lblCountDown.Text = timerCounter.ToString();
                 lblCountDown.Refresh();
             }
