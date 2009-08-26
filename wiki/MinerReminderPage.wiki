@@ -20,14 +20,17 @@ _a short list_
     # Show Balloon Alert--alerts will popup from your notification area (system tray)
     # Start and stop the timer from a right-click menu on the notification icon
     # Other functions from the notification icon menu
-    # NEW - Change the .wav file to anything on your system
-    # NEW - Save user settings
+
+  * Other Features
+    # Disable sound
+    # _NEW_ - Change the .wav file to anything on your system
+    # _NEW_ - Save user settings
 
 
 = Future Features =
 
-  * Properly copy/paste the cycle time from the info page of the miner into the seconds   text box of the Miner Reminder
-  * Leave your Suggestion! (and of course, "delete it from the internet", is a viable option :) I am open.)
+  * Properly copy/paste the cycle time from the info page of the miner into the seconds   text box of the Mining Reminder
+  * *Leave your Suggestion!* (and of course, "delete it from the internet", is a viable option :) I am open.)
     * Very light on the suggestions, come on don't be shy (:
 
   
