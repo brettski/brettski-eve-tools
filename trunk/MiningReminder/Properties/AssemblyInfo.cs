@@ -8,9 +8,9 @@ using System.Runtime.InteropServices;
 [assembly: AssemblyTitle("Mining Reminder")]
 [assembly: AssemblyDescription("Lets you know when to dump your cargo")]
 [assembly: AssemblyConfiguration("")]
-[assembly: AssemblyCompany("Brettski, Inc.")]
-[assembly: AssemblyProduct("MiningReminder")]
-[assembly: AssemblyCopyright("Copyright ©  2008")]
+[assembly: AssemblyCompany("Brettski")]
+[assembly: AssemblyProduct("Mining Reminder")]
+[assembly: AssemblyCopyright("Copyright ©  2008 - 2009 Brettski")]
 [assembly: AssemblyTrademark("")]
 [assembly: AssemblyCulture("")]
 
@@ -29,5 +29,5 @@ using System.Runtime.InteropServices;
 //      Build Number
 //      Revision
 //
-[assembly: AssemblyVersion("0.1.2")]
-[assembly: AssemblyFileVersion("0.1.2")]
+[assembly: AssemblyVersion("0.1.5")]
+[assembly: AssemblyFileVersion("0.1.5")]

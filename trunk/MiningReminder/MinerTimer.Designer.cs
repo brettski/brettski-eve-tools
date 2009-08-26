@@ -38,6 +38,7 @@ namespace MiningReminder
             this.notifyIconToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.hideOnTaskbarToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.baloonAlertToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.disableSoundToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.helpToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.aboutToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.ChkTimerCtrl = new System.Windows.Forms.CheckBox();
@@ -54,7 +55,9 @@ namespace MiningReminder
             this.tsmStartTimer = new System.Windows.Forms.ToolStripMenuItem();
             this.tsmHide = new System.Windows.Forms.ToolStripMenuItem();
             this.tsmClose = new System.Windows.Forms.ToolStripMenuItem();
-            this.disableSoundToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.saveSettingsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.setSoundFileToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.toolStripSeparator1 = new System.Windows.Forms.ToolStripSeparator();
             this.menuStrip1.SuspendLayout();
             this.cmsTimeList.SuspendLayout();
             this.cmsForNotify.SuspendLayout();
@@ -97,7 +100,7 @@ namespace MiningReminder
             // closeToolStripMenuItem
             // 
             this.closeToolStripMenuItem.Name = "closeToolStripMenuItem";
-            this.closeToolStripMenuItem.Size = new System.Drawing.Size(114, 22);
+            this.closeToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
             this.closeToolStripMenuItem.Text = "Close";
             this.closeToolStripMenuItem.Click += new System.EventHandler(this.closeToolStripMenuItem_Click);
             // 
@@ -107,7 +110,10 @@ namespace MiningReminder
             this.notifyIconToolStripMenuItem,
             this.hideOnTaskbarToolStripMenuItem,
             this.baloonAlertToolStripMenuItem,
-            this.disableSoundToolStripMenuItem});
+            this.disableSoundToolStripMenuItem,
+            this.setSoundFileToolStripMenuItem,
+            this.toolStripSeparator1,
+            this.saveSettingsToolStripMenuItem});
             this.settingsToolStripMenuItem.Name = "settingsToolStripMenuItem";
             this.settingsToolStripMenuItem.Size = new System.Drawing.Size(64, 22);
             this.settingsToolStripMenuItem.Text = "&Settings";
@@ -136,6 +142,14 @@ namespace MiningReminder
             this.baloonAlertToolStripMenuItem.Text = "Balloon Alerts";
             this.baloonAlertToolStripMenuItem.ToolTipText = "Enables Alerts to show in notify icon balloon";
             // 
+            // disableSoundToolStripMenuItem
+            // 
+            this.disableSoundToolStripMenuItem.CheckOnClick = true;
+            this.disableSoundToolStripMenuItem.Name = "disableSoundToolStripMenuItem";
+            this.disableSoundToolStripMenuItem.Size = new System.Drawing.Size(176, 22);
+            this.disableSoundToolStripMenuItem.Text = "Disable Sound";
+            this.disableSoundToolStripMenuItem.ToolTipText = "Click to disable audio alert";
+            // 
             // helpToolStripMenuItem
             // 
             this.helpToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
@@ -147,8 +161,9 @@ namespace MiningReminder
             // aboutToolStripMenuItem
             // 
             this.aboutToolStripMenuItem.Name = "aboutToolStripMenuItem";
-            this.aboutToolStripMenuItem.Size = new System.Drawing.Size(120, 22);
+            this.aboutToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
             this.aboutToolStripMenuItem.Text = "&About";
+            this.aboutToolStripMenuItem.Click += new System.EventHandler(this.aboutToolStripMenuItem_Click);
             // 
             // ChkTimerCtrl
             // 
@@ -290,13 +305,25 @@ namespace MiningReminder
             this.tsmClose.Text = "Quit";
             this.tsmClose.Click += new System.EventHandler(this.tsmClose_Click);
             // 
-            // disableSoundToolStripMenuItem
+            // saveSettingsToolStripMenuItem
             // 
-            this.disableSoundToolStripMenuItem.CheckOnClick = true;
-            this.disableSoundToolStripMenuItem.Name = "disableSoundToolStripMenuItem";
-            this.disableSoundToolStripMenuItem.Size = new System.Drawing.Size(176, 22);
-            this.disableSoundToolStripMenuItem.Text = "Disable Sound";
-            this.disableSoundToolStripMenuItem.ToolTipText = "Click to disable audio alert";
+            this.saveSettingsToolStripMenuItem.Name = "saveSettingsToolStripMenuItem";
+            this.saveSettingsToolStripMenuItem.Size = new System.Drawing.Size(176, 22);
+            this.saveSettingsToolStripMenuItem.Text = "Save Settings";
+            this.saveSettingsToolStripMenuItem.Click += new System.EventHandler(this.saveSettingsToolStripMenuItem_Click);
+            // 
+            // setSoundFileToolStripMenuItem
+            // 
+            this.setSoundFileToolStripMenuItem.Name = "setSoundFileToolStripMenuItem";
+            this.setSoundFileToolStripMenuItem.Size = new System.Drawing.Size(176, 22);
+            this.setSoundFileToolStripMenuItem.Text = "Set Sound File";
+            this.setSoundFileToolStripMenuItem.ToolTipText = "Sets new sound file";
+            this.setSoundFileToolStripMenuItem.Click += new System.EventHandler(this.setSoundFileToolStripMenuItem_Click);
+            // 
+            // toolStripSeparator1
+            // 
+            this.toolStripSeparator1.Name = "toolStripSeparator1";
+            this.toolStripSeparator1.Size = new System.Drawing.Size(173, 6);
             // 
             // minerMain
             // 
@@ -352,6 +379,9 @@ namespace MiningReminder
         private System.Windows.Forms.ToolStripMenuItem hideOnTaskbarToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem baloonAlertToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem disableSoundToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem saveSettingsToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem setSoundFileToolStripMenuItem;
+        private System.Windows.Forms.ToolStripSeparator toolStripSeparator1;
     }
 }
 

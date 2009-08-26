@@ -49,6 +49,22 @@
         "PrivateKeyFile" = "8:"
         "TimeStampServer" = "8:"
         "InstallerBootstrapper" = "3:2"
+            "BootstrapperCfg:{63ACBE69-63AA-4F98-B2B6-99F9E24495F2}"
+            {
+            "Enabled" = "11:TRUE"
+            "PromptEnabled" = "11:TRUE"
+            "PrerequisitesLocation" = "2:1"
+            "Url" = "8:"
+            "ComponentsUrl" = "8:"
+                "Items"
+                {
+                    "{EDC2488A-8267-493A-A98E-7D9C3B36CDF3}:Microsoft.Net.Framework.2.0"
+                    {
+                    "Name" = "8:Microsoft .NET Framework 2.0"
+                    "ProductCode" = "8:Microsoft.Net.Framework.2.0"
+                    }
+                }
+            }
         }
         "Release"
         {
@@ -65,6 +81,17 @@
         "PrivateKeyFile" = "8:"
         "TimeStampServer" = "8:"
         "InstallerBootstrapper" = "3:2"
+            "BootstrapperCfg:{63ACBE69-63AA-4F98-B2B6-99F9E24495F2}"
+            {
+            "Enabled" = "11:TRUE"
+            "PromptEnabled" = "11:TRUE"
+            "PrerequisitesLocation" = "2:1"
+            "Url" = "8:"
+            "ComponentsUrl" = "8:"
+                "Items"
+                {
+                }
+            }
         }
     }
     "Deployable"
@@ -170,23 +197,23 @@
         "Name" = "8:Microsoft Visual Studio"
         "ProductName" = "8:Mining Reminder"
         "ProductCode" = "8:{296674BA-E84B-42E9-AA30-2C0BFBDF8279}"
-        "PackageCode" = "8:{5F0A7BAE-9340-4932-9A51-77F42A38B211}"
+        "PackageCode" = "8:{F4B03231-A1EC-4B4C-9E88-62391047D668}"
         "UpgradeCode" = "8:{FCE2B512-472F-41BA-8668-37A8B6F0448C}"
         "RestartWWWService" = "11:FALSE"
-        "RemovePreviousVersions" = "11:FALSE"
+        "RemovePreviousVersions" = "11:TRUE"
         "DetectNewerInstalledVersion" = "11:TRUE"
         "InstallAllUsers" = "11:FALSE"
         "ProductVersion" = "8:1.0.0"
         "Manufacturer" = "8:eve-igbtools.com"
         "ARPHELPTELEPHONE" = "8:"
         "ARPHELPLINK" = "8:http://code.google.com/p/brettski-eve-tools/"
-        "Title" = "8:MiningReminderInstaller"
+        "Title" = "8:Mining Reminder Installer"
         "Subject" = "8:"
         "ARPCONTACT" = "8:Brettski"
         "Keywords" = "8:Mining"
         "ARPCOMMENTS" = "8:Installs the EVE-IGBTools.com Mining Reminder"
-        "ARPURLINFOABOUT" = "8:"
-        "ARPPRODUCTICON" = "8:"
+        "ARPURLINFOABOUT" = "8:http://eve-igbtools.com"
+        "ARPPRODUCTICON" = "8:_3726D1D92A6E4584A66189BFF6DAA5BD"
         "ARPIconIndex" = "3:0"
         "SearchPath" = "8:"
         "UseSystemSearchPath" = "11:TRUE"
