@@ -105,7 +105,10 @@ namespace MiningReminder
 
         private void doAlarm()
         {
-            splayer.Play();
+            if (false == disableSoundToolStripMenuItem.Checked)
+            {
+                splayer.Play();
+            }
             this.Activate();
             if (useBaloonAlerts)
             {

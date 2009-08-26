@@ -9,8 +9,8 @@
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <RootNamespace>MiningReminder</RootNamespace>
     <AssemblyName>MiningReminder</AssemblyName>
-    <ManifestCertificateThumbprint>705DF49FBF68A458B07A36FD1FD22824BAA72C35</ManifestCertificateThumbprint>
-    <ManifestKeyFile>MiningReminder_TemporaryKey.pfx</ManifestKeyFile>
+    <ManifestCertificateThumbprint>BFC7531F542DB8E9873597F3A01A86AB96470E05</ManifestCertificateThumbprint>
+    <ManifestKeyFile>MiningReminder_1_TemporaryKey.pfx</ManifestKeyFile>
     <GenerateManifests>true</GenerateManifests>
     <TargetZone>LocalIntranet</TargetZone>
     <SignManifests>true</SignManifests>
@@ -79,6 +79,7 @@
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
     <None Include="app.config" />
+    <None Include="MiningReminder_1_TemporaryKey.pfx" />
     <None Include="MiningReminder_TemporaryKey.pfx" />
     <BaseApplicationManifest Include="Properties\app.manifest" />
     <None Include="Properties\Settings.settings">
