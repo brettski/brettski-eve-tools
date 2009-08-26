@@ -1,5 +1,5 @@
 #summary Miner Reminder Home
-#labels Outline
+#labels Outline,Featured
 
 = Introduction =
 
