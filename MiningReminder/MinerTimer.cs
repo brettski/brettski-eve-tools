@@ -19,7 +19,34 @@ namespace MiningReminder
         public minerMain()
         {
             InitializeComponent();
-            splayer.SoundLocation = @"C:\windows\media\ringin.wav";
+            LoadAppSettings();
+        }
+
+        private void LoadAppSettings()
+        {
+            Properties.Settings.Default.Upgrade();
+            bool dsound = Properties.Settings.Default.DisableSound;
+            bool usenoteicon = Properties.Settings.Default.UseNotifyIcon;
+            bool hideonbar = Properties.Settings.Default.HideOnTaskbar;
+            string sfile = Properties.Settings.Default.SoundFile;
+            if (null != sfile && "" != sfile)
+            {
+                if (System.IO.File.Exists(sfile) && sfile.EndsWith(".wav"))
+                    splayer.SoundLocation = sfile;
+                else
+                    MessageBox.Show("File " + sfile + " does not exist, using default, ringin.wav");
+            }
+            else
+            {
+                MessageBox.Show("User wave file is null, using default, ringin.wav");
+                splayer.SoundLocation = @"C:\windows\media\ringin.wav";
+            }
+            hideOnTaskbarToolStripMenuItem.Checked  = hideonbar;
+            notifyIconToolStripMenuItem.Checked  = usenoteicon;
+            disableSoundToolStripMenuItem.Checked = dsound;
+            SettingsMenuAction();
+            menuStrip1.Refresh();
+
         }
 
         private void minerMain_Load(object sender, EventArgs e)
@@ -161,6 +188,7 @@ namespace MiningReminder
             if ("baloonAlertToolStripMenuItem" == e.ClickedItem.Name)
                 baloonAlertToolStripMenuItem.Checked = !baloonAlertToolStripMenuItem.Checked;
 
+            ShowSettingsNotSaved();
         }
         /// <summary>
         /// Based on current conditions figure out what to do with the whole settings menu tree
@@ -263,6 +291,58 @@ namespace MiningReminder
             // Check for enter, if occurs, Start timer
             if (Convert.ToChar(Keys.Enter) == e.KeyChar)
                 startTimer();
+        }
+
+        /// <summary>
+        /// When Clicked save current settings values to app.config via Properties.Settings.Default...
+        /// </summary>
+        private void saveSettingsToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Properties.Settings.Default.DisableSound = disableSoundToolStripMenuItem.Checked;
+            Properties.Settings.Default.UseNotifyIcon = notifyIconToolStripMenuItem.Checked;
+            Properties.Settings.Default.HideOnTaskbar = hideOnTaskbarToolStripMenuItem.Checked;
+            Properties.Settings.Default.SoundFile = splayer.SoundLocation;
+            Properties.Settings.Default.Save();
+            ShowSettingsSaved();
+        }
+
+        private void setSoundFileToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            // Open Filedialog, pick a wav file and set it in player and user settings
+            OpenFileDialog fileD = new OpenFileDialog();
+            fileD.Title = "Select New Sound (wav) File";
+            fileD.Filter = "wav Files|*.wav";
+            fileD.InitialDirectory = @"C:\windows\media\";
+            if (fileD.ShowDialog() == DialogResult.OK)
+            {
+                splayer.SoundLocation = fileD.FileName;
+                ShowSettingsNotSaved();
+            }
+        }
+
+        /// <summary>
+        /// All settings to show user settings are saved
+        /// </summary>
+        private void ShowSettingsSaved()
+        {
+            saveSettingsToolStripMenuItem.Enabled = false;
+            saveSettingsToolStripMenuItem.Text = "Saved...";
+            menuStrip1.Refresh();
+        }
+        /// <summary>
+        /// All setting to show user settings are not saved
+        /// </summary>
+        private void ShowSettingsNotSaved()
+        {
+            saveSettingsToolStripMenuItem.Enabled = true;
+            saveSettingsToolStripMenuItem.Text = "Save Settings";
+            menuStrip1.Refresh();
+        }
+
+        private void aboutToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            AboutDialog ab = new AboutDialog();
+            ab.ShowDialog();
         }
     }
 }
